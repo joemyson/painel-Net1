@@ -1,8 +1,32 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Painel";
 }
+<link href="~/css/painel.css" rel="stylesheet" />
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="row cabecalho">
+    <h1 class="painel_senha ">painel de senhas</h1>
+        
 </div>
+<div class="row  conteudo">
+    <div class="col-md-8 conteudo-painel">
+        <h1 class="senha-alinhada">
+            <span>SENHA:</span><span id="senha"></span>
+            <span>GUICHE:</span><span id="guiche"></span>
+        </h1>
+
+
+    </div>
+    <div class="col-md-4 conteudo-painel">
+        <h3 class=" ultima-chamada">Últimas chamadas</h3>
+        <div id="senhaChamada">
+
+        </div>
+    </div>
+
+</div>
+
+<div class="row  rodape">
+
+</div>
+
+
