@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Painel_Net.Config;
+using Painel_Net.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,29 @@ namespace Painel_Net.Controllers
             var senhas = _context.Painel.Take(5)
                 .OrderByDescending(c=>c.Id).ToList();
             return Json(new { senhas = senhas, senha = senhas.FirstOrDefault() });
+        }
+
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+
+        public ActionResult Create(Painel painel)
+        {
+            try
+            {
+                _context.Painel.Add(painel);
+                _context.SaveChanges();
+
+                return RedirectToAction(nameof(Create));
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }
